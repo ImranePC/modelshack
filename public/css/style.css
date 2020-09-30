@@ -1,0 +1,105 @@
+* {
+    --main-color:rgb(170, 96, 255);
+    --main-color-darker: rgb(146, 71, 231);
+}
+
+.custom-link {
+    color: var(--main-color);
+}
+
+.text-color-main {
+    color: var(--main-color);
+}
+
+.rounded-xl { border-radius: 8px }
+.rounded-top-xl { border-radius: 8px 8px 0 0 }
+.rounded-bottom-xl { border-radius: 0 0 8px 8px }
+
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.btn-main {
+    background-color: var(--main-color);
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background-color: var(--main-color);
+    filter: brightness(85%);
+}
+
+.text-note {
+    color: grey;
+    font-size: 12px;
+}
+
+.bg-grey {
+    background-color: #f5f5f5;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border: 1px solid var(--main-color);
+    color: #616161;
+}
+
+textarea:focus {
+    outline: 0;
+    box-shadow: 0 0 0 1pt var(--main-color);
+}
+
+
+/* Navbar Begin */
+.my-navbar {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+    border-radius: 0 0 32px 32px;
+}
+
+.my-navbar-links {
+    display: flex;
+    justify-content: center;
+    margin: 0 32px 0 32px;
+}
+
+.my-navbar-links a {
+    color: white;
+    font-weight: bold;
+}
+.my-navbar-links a:hover { text-decoration: none }
+
+.nav-link {
+    text-align: center;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: none;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background-color: var(--main-color-darker);
+}
+/* Navbar End */
+
+
+/* Media queries */
+@media (max-width: 768px) {
+    body { overflow-x: hidden }
+    .my-navbar {
+        left: 0;
+        border-radius: 0;
+        transform: translateX(0%);
+        width: 100%;
+    }
+    .my-navbar-links { justify-content: space-around }
+    .nav-link { font-size: 16px }
+}
