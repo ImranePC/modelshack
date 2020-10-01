@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} - {{ pagename }} {% endblock %}
+
+{% block body %}
+
+    <div class="section">
+        <h4 class="text-title myfont">{{ pagename }}</h4>
+    </div>
+
+    <div class="divider"></div>
+
+    {% block content %}{% endblock %}
+
+{% endblock %}

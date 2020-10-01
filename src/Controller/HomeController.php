@@ -26,7 +26,7 @@ class HomeController extends AbstractController
      */
     public function upload()
     {
-        return $this->render("pages/home.html.twig", [
+        return $this->render("pages/upload.html.twig", [
             "pagename"=>"Upload",
         ]);
     }
@@ -36,7 +36,7 @@ class HomeController extends AbstractController
      */
     public function view()
     {
-        return $this->render("pages/home.html.twig", [
+        return $this->render("pages/view.html.twig", [
             "pagename"=>"View",
         ]);    
     }
@@ -46,7 +46,7 @@ class HomeController extends AbstractController
      */
     public function search()
     {
-        return $this->render("pages/home.html.twig", [
+        return $this->render("pages/search.html.twig", [
             "pagename"=>"Search",
         ]);    
     }

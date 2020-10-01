@@ -1,18 +1,27 @@
 * {
     --main-color:rgb(190, 133, 255);
-    --main-color-darker: rgb(146, 71, 231);
+    --main-color-darker: rgb(180, 113, 255);
+    --main-color-lighten: rgb(212, 174, 255);
 }
 
-body, main, footer {
+body {
     padding-left: 300px;
 }
 
+/* Custom Materialize properties */
+
 .waves-effect.waves-maincol .waves-ripple {
-    /* The alpha value allows the text and background color
-    of the button to still show through. */
-     background-color: var(--main-color);
+    background-color: var(--main-color);
+}
+.maincolor-text { color: var(--main-color) }
+
+/*---*/
+
+.bor {
+    border: 1px solid red;
 }
 
+/*Text Effects*/
 .custom-link {
     color: var(--main-color);
 }
@@ -20,6 +29,19 @@ body, main, footer {
 .text-color-main {
     color: var(--main-color);
 }
+
+.text-bold { font-weight: bold }
+
+.text-title { 
+    display: inline-block;
+    margin-left: 25px;
+    color: var(--main-color-lighten);
+    border-radius: 12px;
+}
+
+.myfont { font-family: 'Poppins', sans-serif; }
+
+/*Text Effects END*/
 
 .rounded-xl { border-radius: 8px }
 .rounded-top-xl { border-radius: 8px 8px 0 0 }
@@ -45,9 +67,11 @@ body, main, footer {
     font-size: 12px;
 }
 
-.bg-grey {
-    background-color: #f5f5f5;
-}
+.bg-grey { background-color: #f5f5f5 }
+
+.bg-maincolor { background-color: var(--main-color) }
+.bg-maincolor:hover { background-color: var(--main-color-darker) }
+.bg-maincolor:focus { background-color: var(--main-color-darker) }
 
 textarea {
     resize: none;
@@ -114,10 +138,8 @@ textarea:focus {
     .nav-link { font-size: 16px }
 }
 
-
-
 @media only screen and (max-width : 992px) {
-    header, main, footer {
+    body {
         padding-left: 0;
     }
 }

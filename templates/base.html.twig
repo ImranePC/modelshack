@@ -7,29 +7,56 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
             <link rel="stylesheet" href="/modelshack/public/css/style.css">
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
         {% endblock %}
     </head>
     <body>
 
+        <!-- Navbar -->
         <ul id="slide-out" class="sidenav sidenav-fixed">
             <li>
                 <div class="user-view">
                     <div class="background" style="background-color: var(--main-color)"></div>
                     <div class="section">
-                        <h5 class="white-text">ModelShack</h5>
+                        <h4 class="white-text center-align">Logo here</h4>
                     </div>
                 </div>
             </li>
-            <li><a href="home">Home</a></li>
+            <li id="ho"><a href="home">Home</a></li>
             <li><div class="divider"></div></li>
-            <li><a href="upload"><i class="fas fa-upload fa-lg"></i>Upload</a></li>
-            <li><a href="view"><i class="fas fa-cube fa-lg"></i>View</a></li>
-            <li><a href="search"><i class="fas fa-search fa-lg"></i>Search</a></li>
+            <li id="up"><a href="upload"><i class="fas fa-upload fa-lg"></i>Upload</a></li>
+            <li id="vi"><a href="view"><i class="fas fa-cube fa-lg"></i>View</a></li>
+            <li id="se"><a href="search"><i class="fas fa-search fa-lg"></i>Search</a></li>
         </ul>
 
         {% block body %}{% endblock %}
+        
         {% block javascripts %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script>
+                function getPath(windowLoc) {
+                    let n = windowLoc.split("/")
+                    return n[n.length-1]
+                }
+                var path = getPath(window.location.pathname)
+
+                switch (path) {
+                    case 'home':
+                        $('#ho').addClass('active')
+                        break;
+                    case 'upload':
+                        $('#up').addClass('active')
+                        break;                    
+                    case 'view':
+                        $('#vi').addClass('active')
+                        break;
+                    case 'search':
+                        $('#se').addClass('active')
+                        break;
+                }
+
+            </script>
         {% endblock %}
     </body>
 </html>
