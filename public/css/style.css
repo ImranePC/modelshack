@@ -1,6 +1,16 @@
 * {
-    --main-color:rgb(170, 96, 255);
+    --main-color:rgb(190, 133, 255);
     --main-color-darker: rgb(146, 71, 231);
+}
+
+body, main, footer {
+    padding-left: 300px;
+}
+
+.waves-effect.waves-maincol .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+     background-color: var(--main-color);
 }
 
 .custom-link {
@@ -52,7 +62,7 @@ textarea:focus {
 }
 
 
-/* Navbar Begin */
+/* Old Navbar Begin */
 .my-navbar {
     z-index: 99;
     position: fixed;
@@ -102,4 +112,12 @@ textarea:focus {
     }
     .my-navbar-links { justify-content: space-around }
     .nav-link { font-size: 16px }
+}
+
+
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
 }

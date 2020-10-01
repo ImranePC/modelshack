@@ -21,6 +21,9 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/upload", name="upload")
+     */
     public function upload()
     {
         return $this->render("pages/home.html.twig", [
@@ -28,6 +31,9 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/view", name="view")
+     */
     public function view()
     {
         return $this->render("pages/home.html.twig", [
@@ -35,6 +41,9 @@ class HomeController extends AbstractController
         ]);    
     }
 
+    /**
+     * @Route("/search", name="search")
+     */
     public function search()
     {
         return $this->render("pages/home.html.twig", [
