@@ -2,6 +2,42 @@
 
 {% block content %}
 
-    <div class="container">Contenu de {{ pagename }}</div>
+    <div class="container">
+        <div class="row">
+            <div class="col l8 offset-l2 s12">
+                {% include "pages/model/_formsearch.html.twig" %}      
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <p><i>Result for : [argument] </i></p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col l12">
+                <table class="striped highlight">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID00001</td>
+                            <td>Example content ...</td>
+                            <td>01/01/1970</td>
+                        </tr>      
+                    </tbody>
+                </table>         
+            </div>
+        </div>        
+    </div>
+
 
 {% endblock %}

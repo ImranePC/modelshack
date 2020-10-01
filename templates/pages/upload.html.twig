@@ -2,6 +2,29 @@
 
 {% block content %}
 
-    <div class="container">Contenu de {{ pagename }}</div>
+    <div class="container">
+        <div class="row">
+            <div class="col l6 offset-l3 s12">
+            <p>Keep your author name in mind to find your 3D models in <a href="search" class="custom-link"><u>search section</u></a>.</p>
+            <div class="divider"></div>
+    
+            {% include "pages/model/_formupload.html.twig" %}
+
+            </div>
+        </div>
+    </div>
+
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        // Input max-length indicator
+        $(document).ready(function() {
+            $('#input_author,#input_desc').characterCounter();
+        });
+    
+    </script>
+
+{% endblock %}
 
 {% endblock %}

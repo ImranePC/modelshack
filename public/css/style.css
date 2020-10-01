@@ -8,6 +8,8 @@ body {
     padding-left: 300px;
 }
 
+p { color: #494949; }
+
 /* Custom Materialize properties */
 
 .waves-effect.waves-maincol .waves-ripple {
@@ -21,14 +23,15 @@ body {
     border: 1px solid red;
 }
 
-/*Text Effects*/
-.custom-link {
-    color: var(--main-color);
+.imglogo {
+    width: 80px;
+    margin-bottom: 10px;
 }
 
-.text-color-main {
-    color: var(--main-color);
-}
+/*Text Effects*/
+.custom-link { color: var(--main-color); }
+
+.text-color-main { color: var(--main-color); }
 
 .text-bold { font-weight: bold }
 
@@ -40,16 +43,13 @@ body {
 }
 
 .myfont { font-family: 'Poppins', sans-serif; }
-
 /*Text Effects END*/
 
 .rounded-xl { border-radius: 8px }
 .rounded-top-xl { border-radius: 8px 8px 0 0 }
 .rounded-bottom-xl { border-radius: 0 0 8px 8px }
 
-.bg-main {
-    background-color: var(--main-color);
-}
+.bg-main { background-color: var(--main-color); }
 
 .btn-main {
     background-color: var(--main-color);
@@ -57,10 +57,7 @@ body {
     transition: 0.3s;
 }
 
-.btn-main:hover {
-    background-color: var(--main-color);
-    filter: brightness(85%);
-}
+.btn-main:hover { background-color: var(--main-color-lighten); }
 
 .text-note {
     color: grey;
