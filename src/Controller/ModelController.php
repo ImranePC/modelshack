@@ -54,7 +54,7 @@ class ModelController extends AbstractController
      */
     public function updateDescription()
     {
-        $model = $this->repository->findById("ID667");
+        $model = $this->repository->findByIdmodel("ID667");
         $model[0]->setDescription("Nouvelle description");
         $this->em->flush();
 

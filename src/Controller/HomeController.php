@@ -2,7 +2,11 @@
 
 namespace App\Controller;
 
+use App\Repository\ModelRepository;
+use App\Form\ModelType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -22,10 +26,25 @@ class HomeController extends AbstractController
     /**
      * @Route("/upload", name="upload")
      */
-    public function upload()
-    {
+    public function upload(EntityManagerInterface $em,Request $request)
+    {   
+        $form = $this->createForm(ModelType::class);
+        
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+
+            $model = $form->getData();
+            $model->setFilename('undefined name');
+            $em->persist($model);
+            //$em->flush();
+            $this->addFlash("notice","Your model is uploaded - ID : " . $model->getIdmodel());
+
+            return $this->redirectToRoute('upload');
+        }
+
         return $this->render("pages/upload.html.twig", [
             "pagename"=>"Upload",
+            "form"=>$form->createView(),
         ]);
     }
 
@@ -42,11 +61,15 @@ class HomeController extends AbstractController
     /**
      * @Route("/search", name="search")
      */
-    public function search()
+    public function search(ModelRepository $repository)
     {
+        $model = $repository->findLatest();
+        dump($model);
+
         return $this->render("pages/search.html.twig", [
             "pagename"=>"Search",
-        ]);    
+            "models"=>$model
+        ]);
     }
 
 }

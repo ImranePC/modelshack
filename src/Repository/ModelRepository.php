@@ -19,7 +19,21 @@ class ModelRepository extends ServiceEntityRepository
         parent::__construct($registry, Model::class);
     }
 
-    public function findAllByAuthor($authorName)
+    /**
+     * @return Model[]
+     */
+    public function findLatest()
+    {
+        return $this->createQueryBuilder('p')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
+     * @return Model[]
+     */
+    public function findAllByAuthor($authorName): array
     {
         return $this->createQueryBuilder('p')
             ->where("p.author = '$authorName'")
@@ -28,13 +42,16 @@ class ModelRepository extends ServiceEntityRepository
             
     }
 
-    public function findById($idModel)
-    {
+    /**
+     * @return Model[]
+     */
+    public function findByIdmodel($idModel): Model
+    {   
         return $this->createQueryBuilder('p')
             ->where("p.idmodel = '$idModel'")
             ->setMaxResults(1)
             ->getQuery()
-            ->getResult();
+            ->getOneOrNullResult();
     }
 
 

@@ -121,6 +121,11 @@ textarea:focus {
 }
 /* Navbar End */
 
+/* Space gap */
+.space-50 { height: 50px; }
+.space-100 { height: 100px; }
+.space-200 { height: 200px; }
+.space-300 { height: 300px; }
 
 /* Media queries */
 @media (max-width: 768px) {
