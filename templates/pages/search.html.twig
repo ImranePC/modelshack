@@ -23,6 +23,7 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Author</th>
                             <th>Description</th>
                             <th>Date</th>
                         </tr>
@@ -30,14 +31,25 @@
                     <tbody>
                         <tr>
                             <td>ID00001</td>
+                            <td>Jason</td>
                             <td>Example content ...</td>
                             <td>01/01/1970</td>
-                        </tr>      
+                        </tr>    
+                        
+                        {% for model in models %}
+                            <tr>
+                                <td>{{ model.idmodel }}</td>
+                                <td>{{ model.author }}</td>
+                                <td>{{ model.description }}</td>
+                                <td>{{ model.date|date("m/d/Y") }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>         
             </div>
         </div>        
     </div>
 
+    <div class="space-300"></div>
 
 {% endblock %}

@@ -7,8 +7,35 @@
             <div class="col l6 offset-l3 s12">
             <p>Keep your author name in mind to find your 3D models in <a href="search" class="custom-link"><u>search section</u></a>.</p>
             <div class="divider"></div>
-    
-            {% include "pages/model/_formupload.html.twig" %}
+            <div class="space-50"></div>
+            {# {% include "pages/model/_formupload.html.twig" %} #}
+
+            {% for message in app.flashes('notice') %}
+                <div class="card purple lighten-5 z-depth-0">
+                    <div class="card-content">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {{ form_start(form) }}
+
+            {{ form_label(form.author) }}
+            {{ form_widget(form.author) }}
+
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+
+            {{ form_label(form.filename, 'File') }} <br>
+            {{ form_widget(form.filename, { 'required': false }, { 'attr' : { 'class': 'class-placeholder' } })  }}
+
+            <div class="space-50"></div>
+            
+            <button class="col l6 offset-l3 s12 btn waves-effect waves-light bg-maincolor" type="submit" name="action">Submit
+                <i class="fas fa-paper-plane"></i>
+            </button>
+
+            {{ form_end(form) }}
 
             </div>
         </div>

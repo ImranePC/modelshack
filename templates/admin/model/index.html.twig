@@ -1,0 +1,13 @@
+{% extends "contentpage.html.twig" %}
+
+{% block title %} {{ parent() }} - Testing {% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+
+    {% for model in models %}
+        Hey <br>
+    {% endfor %}
+
+{% endblock %}
